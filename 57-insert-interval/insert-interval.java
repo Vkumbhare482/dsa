@@ -8,13 +8,13 @@ class Solution {
         int i = 0;
         int n = intervals.length;
 
-        // 1. Add intervals that are completely before newInterval
+        
         while (i < n && intervals[i][1] < newInterval[0]) {
             result.add(intervals[i]);
             i++;
         }
 
-        // 2. Merge overlapping intervals
+        
         while (i < n && intervals[i][0] <= newInterval[1]) {
 
             newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
@@ -23,10 +23,10 @@ class Solution {
             i++;
         }
 
-        // 3. Add the merged newInterval
+       
         result.add(newInterval);
 
-        // 4. Add remaining intervals
+       
         while (i < n) {
             result.add(intervals[i]);
             i++;
