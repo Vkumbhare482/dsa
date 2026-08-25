@@ -1,0 +1,18 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        int candidate = 0;
+
+        // Find candidate
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            count += (num == candidate) ? 1 : -1;
+        }
+
+        // Since majority element always exists, no need to verify
+        return candidate;
+    
+    }
+}
