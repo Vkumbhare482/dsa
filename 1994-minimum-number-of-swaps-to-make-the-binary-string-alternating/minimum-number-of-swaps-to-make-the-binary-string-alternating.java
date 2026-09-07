@@ -19,12 +19,6 @@ class Solution {
             miss1 ++;
         }
       }
-       if (cnt0 > cnt1) {
-            return miss0;
-        } else if (cnt1 > cnt0) {
-            return miss1;
-        } else {
-            return Math.min(miss0, miss1);
-        }
+      return cnt0 == cnt1 ? Math.min(miss0,miss1) : cnt0 > cnt1  ? miss0 : miss1;
     }
 }
